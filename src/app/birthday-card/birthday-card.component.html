@@ -1,0 +1,22 @@
+<div class="birthday-card">
+    <!-- <div [innerHtml]="balloonSvg" class="balloon"></div> -->
+    <!-- <div *ngFor="let balloon of balloons">
+        <div class="balloon" [innerHtml]="balloonSvg"
+         [style.width.px]="balloonSize" [style.height.px]="balloonSize" [style.fill]="balloonColor"></div>
+    </div> -->
+
+    <div class="container disableSelection" >
+        <img #hbdImg src="assets/hbd.png" class="hbd-img" alt="Happy Birthday" style="display: none;">
+        <img #cakeImg
+         src="assets/cake.png" class="cake-img" alt="Cake" style="display: none;">
+    </div>
+
+    <div #balloonContainer class="balloon-container">
+        <app-balloon *ngFor="let balloon of balloons" 
+        [size]="balloon.size" [color]="balloon.color"
+         [x]="balloon.x" (deleteBalloon)="removeBallon($event)"></app-balloon>
+    </div>
+
+    <!-- <h1>Happy Birthday!</h1> -->
+    
+</div> 

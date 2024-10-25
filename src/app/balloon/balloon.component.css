@@ -1,0 +1,135 @@
+/* .balloon {
+    width: 10px;
+    height: 10px;
+    transform: scale(0.5);
+    position: absolute;
+    bottom: -50;
+    animation: float 10s infinite;
+  }
+
+  .balloon.popped {
+    animation: pop 0.5s;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  .balloon.popped::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #FF69B4;
+    border-radius: 50%;
+    animation: burst 0.5s;
+  }
+  
+  @keyframes burst {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+*/
+ 
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100vh);
+    }
+} 
+
+ /* .balloon.popped {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+   */
+
+   .balloon {
+    position: absolute;
+    bottom: 0;
+    animation: float 10s infinite;
+    transition: transform 0.5s;
+  }
+  
+  .balloon.popped {
+    animation: pop 0.5s;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  .balloon.popped::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #FF69B4;
+    border-radius: 50%;
+    animation: burst 0.5s;
+  }
+  
+  @keyframes burst {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+  
+  /* Media queries for mobile phones */
+  @media only screen and (max-width: 768px) {
+    .balloon {
+      width: 30px;
+      height: 30px;
+    }
+    .balloon.popped::before {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .balloon {
+      width: 20px;
+      height: 20px;
+    }
+    .balloon.popped::before {
+      width: 5px;
+      height: 5px;
+    }
+  }
