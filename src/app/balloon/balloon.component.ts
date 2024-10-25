@@ -18,7 +18,7 @@ export class BalloonComponent {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer, private elementRef: ElementRef) { }
 
   ngOnInit() {
-    this.http.get('../assets/output.svg', { responseType: 'text' }).subscribe(svg => {
+    this.http.get('/assets/output.svg', { responseType: 'text' }).subscribe(svg => {
       this.balloonSvg = this.sanitizer.bypassSecurityTrustHtml(svg);
     });
   }
